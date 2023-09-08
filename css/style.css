@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
 
-/* Variables */
+/*------------------------------*\
+            #VARIABLES
+\*------------------------------*/
 
 :root{
     /* Colors */
     --grayish-blue: hsl(237, 18%, 59%);
     --soft-red: hsl(345, 95%, 68%);
     --white: hsl(0, 0%, 100%);
+    /* --dark-blue: #8385A9; */
     --dark-desaturated-blue: hsl(236, 21%, 26%);
     --very-dark-blue: hsl(235, 16%, 14%);
     --very-dark-mostly-blue: hsl(234, 17%, 12%);
@@ -18,14 +21,326 @@
 body{
     background-color: var(--very-dark-mostly-blue);
     background-image: url(../assets/img/bg-stars.svg);
-    font-family: 'Red Hat Text', sans-serif;
+    font-family: 'Red Hat Text', sans-serif;;
     font-size: var(--font-size);
 }
 
-/* Reset */
+/*------------------------------*\
+            #RESET
+\*------------------------------*/
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/*------------------------------*\
+        #MAIN-CONTAINER 
+\*------------------------------*/
+
+.main-container{
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 56px;
+    padding-top: 38%;
+    text-align: center;
+}
+
+.container-title h1{
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 22px;
+    letter-spacing: 6px;
+}
+
+/*------------------------------*\
+            #FOOTER
+\*------------------------------*/
+
+.social-networks{
+    height: 22vh;
+    background-image: url(../assets/img/pattern-hills.svg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position-x: -740px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    padding-left: 20px;
+    padding-top: 46px;
+}
+
+/*------------------------------*\
+            #COUNTDOWN
+\*------------------------------*/
+
+/* .countdown{
+    display: flex;
+    gap: 30px;
+} */
+
+/*
+.time-section{
+    text-align: center;
+    font-size: 30px;
+} */
+
+/*
+
+.time-group{
+    display: flex;
+    gap: 10px;
+}
+*/
+
+/*
+.time-segment{
+    display: block;
+    font-size: 100px;
+    font-weight: 900;
+    width: 100px;
+}
+*/
+
+/*
+.segment-display{
+    position: relative;
+    height: 100%;
+}
+*/
+
+
+
+/*
+.segment-display__top, .segment-display__bottom{
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+*/
+
+
+/*
+
+.segment-display__top{
+    background-color: #111;
+    color: lightcoral; /* #eee */
+    /* line-height: 1.5;
+} */
+
+
+/* .segment-display__bottom{
+    background-color: #333;
+    color: darkgoldenrod; /* #fff */
+    /* line-height: 0;
+} */
+
+
+
+/* .segment-overlay{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100px; 
+    perspective: 400px; /* que hace ? */
+/* } */ 
+
+/* .segment-overlay__top, .segment-overlay__bottom{
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height: 50%;
+} */
+
+/* .segment-overlay__top{
+    top: 0;
+    line-height: 1.5;
+    color: darkorchid; /* #eee */
+    /* background-color: #111;
+    transform-origin: bottom; /* ver que onda,agregado al finala */
+/* } */  
+
+/* .segment-overlay__bottom{
+    bottom: 0;
+    line-height: 0;
+    background-color: #333;
+    color: green; #fff */
+    /* border-top: 2px solid black;
+    transform-origin: top;
+} */
+
+/* .segment-overlay.flip .segment-overlay__top{
+    animation: flip-top 2s linear;
+}
+
+.segment-overlay.flip .segment-overlay__bottom{
+    animation: flip-bottom 0.8s linear;
+}
+
+@keyframes flip-top{
+    0%{
+        transform: rotateX(0deg);
+    }
+    50%, 100%{
+        transform: rotateX(-90deg);
+    }
+}
+
+@keyframes flip-bottom{
+    0%, 50%{
+        transform: rotateX(90deg);
+    }
+    100%{
+        transform: rotateX(0deg);
+    }
+} */ 
+
+
+@media(min-width:768px){
+
+    /*------------------------------*\
+            #MAIN-CONTAINER 
+    \*------------------------------*/
+    .main-container{
+        padding-top: 135px;
+    }
+
+    .container-title{
+        margin-bottom: 60px;
+    }
+
+    /*------------------------------*\
+                #COUNTDOWN
+    \*------------------------------*/
+
+    .countdown{
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .time-section{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .time-section p{
+        color: var(--grayish-blue);
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+    } 
+    
+    .time-group{
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .time-segment{
+        width: 100px;
+        display: block;
+        font-size: 100px;
+        font-weight: 900;
+    }
+
+    .segment-display{
+        position: relative;
+        height: 100%;
+    }
+
+    .segment-display__top, .segment-display__bottom{
+        position: relative;
+        width: 100%;
+        height: 50%;
+        background-color: var(--dark-desaturated-blue);
+        color: var(--soft-red);
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .segment-display__top{
+        line-height: 1.5;
+    }
+
+    .segment-display__bottom{
+        line-height: 0;
+    }
+
+    .segment-overlay{
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        perspective: 400px;
+    }
+
+    .segment-overlay__top, .segment-overlay__bottom{
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        background-color: var(--dark-desaturated-blue);
+        color: var(--soft-red);
+        text-align: center;
+        overflow: hidden;
+    } 
+
+    .segment-overlay__top{
+        top: 0;
+        line-height: 1.5;
+        transform-origin: bottom;
+        
+    }
+
+    .segment-overlay__bottom{
+        bottom: 0;
+        line-height: 0;
+        transform-origin: top;
+        border-top: 2px solid black;
+    }
+
+    .segment-overlay.flip .segment-overlay__top{
+        animation: flip-top 0.8s linear; 
+    }
+
+    .segment-overlay.flip .segment-overlay__bottom{
+        animation: flip-bottom 0.8s linear; 
+    }
+
+    @keyframes flip-top{
+        0%{
+            transform: rotateX(0deg);
+        }
+        50%, 100%{
+            transform: rotateX(-90deg);
+        }
+    }
+
+    @keyframes flip-bottom{
+        0%, 50%{
+            transform: rotateX(90deg);
+        }
+        100%{
+            transform: rotateX(0deg);
+        }
+    }
+    
+    /*------------------------------*\
+                #FOOTER
+    \*------------------------------*/
+
+    .social-networks{
+        background-position-x: left;
+    }
+}
+
+
+
+
+
+
