@@ -25,6 +25,14 @@ body{
     font-size: var(--font-size);
 }
 
+svg path:is(:hover, :focus){
+    fill: var(--soft-red);
+    stroke: var(--soft-red);
+    cursor: pointer;
+}
+
+/*  */
+
 /*------------------------------*\
             #RESET
 \*------------------------------*/
@@ -44,8 +52,12 @@ body{
     display: flex;
     flex-direction: column;
     row-gap: 56px;
-    padding-top: 38%;
     text-align: center;
+    padding-top: 146px;
+}
+
+.container-title{
+    margin-bottom: 30px;
 }
 
 .container-title h1{
@@ -53,7 +65,123 @@ body{
     text-transform: uppercase;
     font-size: 22px;
     letter-spacing: 6px;
+    text-align: center;
 }
+
+/*------------------------------*\
+            #COUNTDOWN
+\*------------------------------*/
+
+.countdown{
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+}
+    
+.time-section{
+    font-size: 30px;   
+    text-align: center;
+}
+    
+.time-section p{
+    color: var(--grayish-blue);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+    
+.time-group{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+    
+.time-segment{
+    width: 35px; 
+    display: block;
+    font-size: 35px; 
+    font-weight: 900;
+}
+    
+.segment-display{
+    position: relative;
+    height: 100%;
+}
+    
+.segment-display__top, .segment-display__bottom{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background-color: var(--dark-desaturated-blue);
+    color: var(--soft-red);
+    text-align: center;
+    overflow: hidden;
+}
+    
+.segment-display__top{
+    line-height: 1.5;
+}
+    
+.segment-display__bottom{
+    line-height: 0;
+}
+    
+.segment-overlay{
+    position: absolute;
+    top: 0;
+    width: 35px;   
+    height: 100%;
+    perspective: 400px;
+}
+    
+.segment-overlay__top, .segment-overlay__bottom{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: var(--dark-desaturated-blue);
+    color: var(--soft-red);
+    text-align: center;
+    overflow: hidden;
+} 
+    
+.segment-overlay__top{
+    top: 0;
+    line-height: 1.5;
+    transform-origin: bottom;
+}
+
+.segment-overlay__bottom{
+    bottom: 0;
+    line-height: 0;
+    transform-origin: top;
+    border-top: 0.5px solid black;
+}
+    
+.segment-overlay.flip .segment-overlay__top{
+    animation: flip-top 0.8s linear; 
+}
+
+.segment-overlay.flip .segment-overlay__bottom{
+    animation: flip-bottom 0.8s linear; 
+}
+
+@keyframes flip-top{
+    0%{
+        transform: rotateX(0deg);
+    }
+    50%, 100%{
+        transform: rotateX(-90deg);
+    }
+}
+
+@keyframes flip-bottom{
+    0%, 50%{
+        transform: rotateX(90deg);
+    }
+    100%{
+        transform: rotateX(0deg);
+    }
+} 
 
 /*------------------------------*\
             #FOOTER
@@ -73,261 +201,74 @@ body{
     padding-top: 46px;
 }
 
-/*------------------------------*\
+/* .social-networks__container img:is(:hover, :focus){
+    cursor: pointer;
+    border: 1px solid red; 
+    fill: red;
+} */
+
+@media(min-width:500px){
+    /*-----------------------*\
             #COUNTDOWN
-\*------------------------------*/
-
-/* .countdown{
-    display: flex;
-    gap: 30px;
-} */
-
-/*
-.time-section{
-    text-align: center;
-    font-size: 30px;
-} */
-
-/*
-
-.time-group{
-    display: flex;
-    gap: 10px;
-}
-*/
-
-/*
-.time-segment{
-    display: block;
-    font-size: 100px;
-    font-weight: 900;
-    width: 100px;
-}
-*/
-
-/*
-.segment-display{
-    position: relative;
-    height: 100%;
-}
-*/
-
-
-
-/*
-.segment-display__top, .segment-display__bottom{
-    overflow: hidden;
-    text-align: center;
-    width: 100%;
-    height: 50%;
-    position: relative;
-}
-*/
-
-
-/*
-
-.segment-display__top{
-    background-color: #111;
-    color: lightcoral; /* #eee */
-    /* line-height: 1.5;
-} */
-
-
-/* .segment-display__bottom{
-    background-color: #333;
-    color: darkgoldenrod; /* #fff */
-    /* line-height: 0;
-} */
-
-
-
-/* .segment-overlay{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100px; 
-    perspective: 400px; /* que hace ? */
-/* } */ 
-
-/* .segment-overlay__top, .segment-overlay__bottom{
-    position: absolute;
-    overflow: hidden;
-    text-align: center;
-    width: 100%;
-    height: 50%;
-} */
-
-/* .segment-overlay__top{
-    top: 0;
-    line-height: 1.5;
-    color: darkorchid; /* #eee */
-    /* background-color: #111;
-    transform-origin: bottom; /* ver que onda,agregado al finala */
-/* } */  
-
-/* .segment-overlay__bottom{
-    bottom: 0;
-    line-height: 0;
-    background-color: #333;
-    color: green; #fff */
-    /* border-top: 2px solid black;
-    transform-origin: top;
-} */
-
-/* .segment-overlay.flip .segment-overlay__top{
-    animation: flip-top 2s linear;
-}
-
-.segment-overlay.flip .segment-overlay__bottom{
-    animation: flip-bottom 0.8s linear;
-}
-
-@keyframes flip-top{
-    0%{
-        transform: rotateX(0deg);
+    \*-----------------------*/
+    
+    .time-section p{
+        font-size: 10px;
     }
-    50%, 100%{
-        transform: rotateX(-90deg);
+        
+    .time-group{
+        margin-bottom: 5px;
     }
-}
-
-@keyframes flip-bottom{
-    0%, 50%{
-        transform: rotateX(90deg);
+        
+    .time-segment{
+        width: 40px; 
+        font-size: 40px; 
     }
-    100%{
-        transform: rotateX(0deg);
+    
+    .segment-overlay{
+        width: 40px;  
     }
-} */ 
-
-
-@media(min-width:768px){
 
     /*------------------------------*\
-            #MAIN-CONTAINER 
+                #FOOTER
     \*------------------------------*/
-    .main-container{
-        padding-top: 135px;
+    
+    .social-networks{
+        background-position-x: 1px;
     }
+}
 
-    .container-title{
-        margin-bottom: 60px;
+@media(min-width:768px){
+    /*-----------------------*\
+            #COUNTDOWN
+    \*-----------------------*/
+
+    .time-segment{
+        width: 80px; 
+        font-size: 80px; 
     }
+    
+    .segment-overlay{
+        width: 80px;  
+    } 
+}
 
+@media(min-width:1024px){
     /*------------------------------*\
                 #COUNTDOWN
     \*------------------------------*/
 
     .countdown{
-        display: flex;
         gap: 30px;
-        justify-content: center;
     }
-
-    .time-section{
-        font-size: 30px;
-        text-align: center;
-    }
-
-    .time-section p{
-        color: var(--grayish-blue);
-        font-size: 20px;
-        text-transform: uppercase;
-        letter-spacing: 6px;
-    } 
     
-    .time-group{
-        display: flex;
-        margin-bottom: 20px;
-    }
-
     .time-segment{
         width: 100px;
-        display: block;
         font-size: 100px;
-        font-weight: 900;
     }
-
-    .segment-display{
-        position: relative;
-        height: 100%;
-    }
-
-    .segment-display__top, .segment-display__bottom{
-        position: relative;
-        width: 100%;
-        height: 50%;
-        background-color: var(--dark-desaturated-blue);
-        color: var(--soft-red);
-        text-align: center;
-        overflow: hidden;
-    }
-
-    .segment-display__top{
-        line-height: 1.5;
-    }
-
-    .segment-display__bottom{
-        line-height: 0;
-    }
-
+    
     .segment-overlay{
-        position: absolute;
-        top: 0;
         width: 100px;
-        height: 100%;
-        perspective: 400px;
-    }
-
-    .segment-overlay__top, .segment-overlay__bottom{
-        position: absolute;
-        width: 100%;
-        height: 50%;
-        background-color: var(--dark-desaturated-blue);
-        color: var(--soft-red);
-        text-align: center;
-        overflow: hidden;
-    } 
-
-    .segment-overlay__top{
-        top: 0;
-        line-height: 1.5;
-        transform-origin: bottom;
-        
-    }
-
-    .segment-overlay__bottom{
-        bottom: 0;
-        line-height: 0;
-        transform-origin: top;
-        border-top: 2px solid black;
-    }
-
-    .segment-overlay.flip .segment-overlay__top{
-        animation: flip-top 0.8s linear; 
-    }
-
-    .segment-overlay.flip .segment-overlay__bottom{
-        animation: flip-bottom 0.8s linear; 
-    }
-
-    @keyframes flip-top{
-        0%{
-            transform: rotateX(0deg);
-        }
-        50%, 100%{
-            transform: rotateX(-90deg);
-        }
-    }
-
-    @keyframes flip-bottom{
-        0%, 50%{
-            transform: rotateX(90deg);
-        }
-        100%{
-            transform: rotateX(0deg);
-        }
     }
     
     /*------------------------------*\
